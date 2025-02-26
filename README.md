@@ -1,4 +1,4 @@
-# HereWeGoal - Your Tasks, Simplified. 🎯
+# HereWeGoal - Your Tasks, Simplified. Your Goals, Achieved. 🎯
 
 ![HereWeGoal_Landing_Hero](public/herewegoal_landing.png)
 
@@ -43,7 +43,6 @@ Open [http://localhost:3000](http://localhost:3000) to start.
 
 ## 📞 Need Help?
 
-- Email: support@herewegoal.com
 - Website: [herewegoal.com](https://herewegoal.com)
 
 ## ⭐️ Show your support
