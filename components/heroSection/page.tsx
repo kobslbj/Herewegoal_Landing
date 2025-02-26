@@ -21,9 +21,9 @@ export default function HeroSection() {
         <Particles className="absolute inset-0 z-0" quantity={100} ease={80} color={color} refresh />
         <div className="z-10 flex max-w-3xl flex-col items-center gap-4 text-center">
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-7xl leading-tight">
-            <TextAnimate>Your Tasks, Your Projects,</TextAnimate>
+            <TextAnimate>Your Tasks, Simplified.</TextAnimate>
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-teal-500 to-emerald-500">
-              Beautifully Simple
+               Your Goals, Achieved.
             </span>
           </h1>
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
