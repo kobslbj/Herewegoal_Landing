@@ -23,7 +23,7 @@ export default function HeroSection() {
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-7xl leading-tight">
             <TextAnimate>Your Tasks, Simplified.</TextAnimate>
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-teal-500 to-emerald-500">
-               Your Goals, Achieved.
+              Your Goals, Achieved.
             </span>
           </h1>
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
@@ -34,7 +34,7 @@ export default function HeroSection() {
           <div className="flex gap-4 mt-8">
             <ShimmerButton className="shadow-2xl">
               <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-                <Link href="/start">Get Started</Link>
+                <Link href="https://app.herewegoal.com">Get Started</Link>
               </span>
             </ShimmerButton>
           </div>

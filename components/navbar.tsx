@@ -48,10 +48,10 @@ export function Navbar() {
         <div className="flex items-center">
           <nav className="hidden md:flex items-center gap-3 mr-3">
             <Button variant="ghost" asChild className="px-4">
-              <Link href="/login">Sign In</Link>
+              <Link href="https://app.herewegoal.com/login">Sign In</Link>
             </Button>
             <Button asChild className="px-4">
-              <Link href="/start">Get Started</Link>
+              <Link href="https://app.herewegoal.com">Get Started</Link>
             </Button>
           </nav>
 
