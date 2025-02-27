@@ -32,11 +32,13 @@ export default function HeroSection() {
             just you and your goals. Start in seconds, achieve more every day.
           </p>
           <div className="flex gap-4 mt-8">
-            <ShimmerButton className="shadow-2xl">
-              <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-                <Link href="https://app.herewegoal.com">Get Started</Link>
-              </span>
-            </ShimmerButton>
+            <Link href="https://app.herewegoal.com">
+              <ShimmerButton className="shadow-2xl">
+                <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                  Get Started
+                </span>
+              </ShimmerButton>
+            </Link>
           </div>
         </div>
       </div>
