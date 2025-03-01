@@ -18,7 +18,7 @@ A personal task manager that just works. No complexity, no distractions - just y
 - Next.js 15.2.0-canary.74
 - React 19.0.0
 - TypeScript
-- Tailwind CSS 
+- Tailwind CSS
 - Shadcn UI
 
 ## 🔧 Getting Started
