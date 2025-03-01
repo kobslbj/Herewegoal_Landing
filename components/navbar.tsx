@@ -90,10 +90,10 @@ export function Navbar() {
                   </div>
                   <div className="flex flex-col gap-3 pt-6 mt-2 border-t">
                     <Button variant="ghost" asChild className="justify-start h-11">
-                      <Link href="/login">Sign In</Link>
+                      <Link href="https://app.herewegoal.com/login">Sign In</Link>
                     </Button>
                     <Button asChild className="justify-start h-11">
-                      <Link href="/start">Get Started</Link>
+                      <Link href="https://app.herewegoal.com">Get Started</Link>
                     </Button>
                   </div>
                 </nav>
