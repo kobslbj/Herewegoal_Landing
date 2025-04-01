@@ -36,12 +36,6 @@ export function Navbar() {
             >
               Pricing
             </Link>
-            <Link
-              href="#about"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-1 py-2"
-            >
-              About
-            </Link>
           </nav>
         </div>
 
@@ -80,12 +74,6 @@ export function Navbar() {
                       className="text-base text-muted-foreground hover:text-foreground transition-colors py-1"
                     >
                       Pricing
-                    </Link>
-                    <Link
-                      href="#about"
-                      className="text-base text-muted-foreground hover:text-foreground transition-colors py-1"
-                    >
-                      About
                     </Link>
                   </div>
                   <div className="flex flex-col gap-3 pt-6 mt-2 border-t">
