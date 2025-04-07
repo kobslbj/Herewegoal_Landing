@@ -1,6 +1,6 @@
 # Herewegoal - Your Tasks, Simplified. Your Goals, Achieved. 🎯
 
-![HereWeGoal_Landing_Hero](public/herewegoal_landing.png)
+![HereWeGoal_Landing_Hero](public/herewegoal_landing_new.png)
 
 ## Overview
 
