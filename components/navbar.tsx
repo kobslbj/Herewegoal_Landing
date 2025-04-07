@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-// import { ModeToggle } from './modeToggle';
+import { ModeToggle } from './modeToggle';
 import { Button } from './ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
@@ -54,7 +54,7 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-2">
-            {/* <ModeToggle /> */}
+            <ModeToggle />
 
             <Sheet>
               <SheetTrigger asChild className="md:hidden">

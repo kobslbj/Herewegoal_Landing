@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
+import { useTheme } from 'next-themes';
 import { AnimatedBeamMultipleOutputDemo } from './animatedBeam';
 import { ProjectMarquee } from './marquee';
 import { AnimatedListDemo } from './animatedList';
@@ -18,16 +19,16 @@ const BentoCard = ({ title, description, className, background }: BentoCardProps
     className={cn(
       'group relative flex flex-col justify-between overflow-hidden rounded-xl transition-all duration-300',
       // light styles
-      'bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]',
+      'bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]',
       // dark styles
       'transform-gpu dark:bg-background dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]',
       className,
     )}
   >
     {background && <div className="absolute inset-0 z-0 overflow-hidden">{background}</div>}
-    <div className="pointer-events-none z-20 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-2 relative bg-gradient-to-b from-background/90 via-background/70 to-transparent">
-      <h3 className="text-xl font-semibold">{title}</h3>
-      <p className="max-w-lg text-muted-foreground">{description}</p>
+    <div className="pointer-events-none z-20 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-2 relative bg-gradient-to-b from-white/90 via-white/70 to-transparent dark:from-background/90 dark:via-background/70 dark:to-transparent">
+      <h3 className="text-xl font-semibold text-black dark:text-white">{title}</h3>
+      <p className="max-w-lg text-gray-600 dark:text-muted-foreground">{description}</p>
     </div>
     <div className="pointer-events-none absolute inset-0 z-10 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />
   </div>
@@ -35,10 +36,11 @@ const BentoCard = ({ title, description, className, background }: BentoCardProps
 
 export default function FeatureSection() {
   const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
-  }, []);
+  }, [resolvedTheme]);
 
   const features: BentoCardProps[] = [
     {
@@ -99,10 +101,12 @@ export default function FeatureSection() {
   }
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8" id="features">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-black text-black dark:text-white" id="features">
       <div className="max-w-screen-xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">What makes Herewegoal different</h2>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4 text-black dark:text-white">
+            What makes Herewegoal different
+          </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[22rem]">
           {features.map((feature, index) => (

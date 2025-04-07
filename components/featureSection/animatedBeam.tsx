@@ -1,15 +1,23 @@
 'use client';
 
-import React, { forwardRef, useRef } from 'react';
-
+import React, { forwardRef, useRef, useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
 import { cn } from '@/lib/utils';
 import { AnimatedBeam } from '@/components/magicui/animated-beam';
+
 const Circle = forwardRef<HTMLDivElement, { className?: string; children?: React.ReactNode }>(
   ({ className, children }, ref) => {
+    const { resolvedTheme } = useTheme();
+    const isDark = resolvedTheme === 'dark';
+    const bgColor = isDark ? 'bg-[#1A1A1A]' : 'bg-white';
+
     return (
       <div
         ref={ref}
-        className={cn('z-10 flex items-center justify-center rounded-full border bg-white p-1.5 shadow-md', className)}
+        className={cn(
+          `z-10 flex items-center justify-center rounded-full border ${bgColor} p-1.5 shadow-md`,
+          className,
+        )}
       >
         <div className="size-full flex items-center justify-center">{children}</div>
       </div>
@@ -26,6 +34,18 @@ export function AnimatedBeamMultipleOutputDemo({ className }: { className?: stri
   const div3Ref = useRef<HTMLDivElement>(null);
   const div6Ref = useRef<HTMLDivElement>(null);
   const div7Ref = useRef<HTMLDivElement>(null);
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  const isDark = resolvedTheme === 'dark';
+  const pathColor = isDark ? '#F1F1F1' : '#E1E1E1';
+  const pathOpacity = isDark ? 0.5 : 0.8;
 
   return (
     <div
@@ -89,8 +109,8 @@ export function AnimatedBeamMultipleOutputDemo({ className }: { className?: stri
         duration={3.5}
         delay={0}
         curvature={25}
-        pathColor="#F1F1F1"
-        pathOpacity={0.5}
+        pathColor={pathColor}
+        pathOpacity={pathOpacity}
         pathWidth={1.5}
         gradientStartColor="#4285F4"
         gradientStopColor="#D54C3F"
@@ -102,8 +122,8 @@ export function AnimatedBeamMultipleOutputDemo({ className }: { className?: stri
         duration={3.5}
         delay={0.5}
         curvature={25}
-        pathColor="#F1F1F1"
-        pathOpacity={0.5}
+        pathColor={pathColor}
+        pathOpacity={pathOpacity}
         pathWidth={1.5}
         gradientStartColor="#FBBC05"
         gradientStopColor="#D54C3F"
@@ -115,8 +135,8 @@ export function AnimatedBeamMultipleOutputDemo({ className }: { className?: stri
         duration={3.5}
         delay={1}
         curvature={25}
-        pathColor="#F1F1F1"
-        pathOpacity={0.5}
+        pathColor={pathColor}
+        pathOpacity={pathOpacity}
         pathWidth={1.5}
         gradientStartColor="#34A853"
         gradientStopColor="#D54C3F"
@@ -128,8 +148,8 @@ export function AnimatedBeamMultipleOutputDemo({ className }: { className?: stri
         duration={3.5}
         delay={2}
         curvature={-20}
-        pathColor="#F1F1F1"
-        pathOpacity={0.5}
+        pathColor={pathColor}
+        pathOpacity={pathOpacity}
         pathWidth={1.5}
         gradientStartColor="#D54C3F"
         gradientStopColor="#4285F4"

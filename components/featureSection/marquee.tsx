@@ -1,5 +1,8 @@
+'use client';
+
 import { Marquee } from '@/components/magicui/marquee';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
 
 // 項目類型定義
 interface Member {
@@ -136,6 +139,9 @@ const ProjectCard = ({
   tagColor,
   description,
 }: Omit<Project, 'id' | 'email' | 'folders' | 'isSharedProject' | 'members' | 'dateTime'>) => {
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === 'dark';
+
   // 為標籤選擇適當的背景色
   const getBgColor = (color: string) => {
     const colorMap: Record<string, string> = {
@@ -151,12 +157,23 @@ const ProjectCard = ({
     return colorMap[color] || 'bg-gray-500';
   };
 
+  // 根據主題設置顏色
+  const cardBg = isDark ? 'bg-gray-900' : 'bg-white';
+  const cardBorder = isDark ? 'border-gray-700' : 'border-gray-200';
+  const cardHoverBorder = isDark ? 'hover:border-gray-600' : 'hover:border-gray-300';
+  const titleColor = isDark ? 'text-white' : 'text-gray-800';
+  const descriptionColor = isDark ? 'text-gray-300' : 'text-gray-600';
+  const progressBg = isDark ? 'bg-gray-800' : 'bg-gray-200';
+  const taskTextColor = isDark ? 'text-gray-300' : 'text-gray-600';
+
   // 計算進度百分比
   const progressPercentage = `${progress}%`;
 
   return (
     <div className="w-80 mx-4 my-4 scale-90 origin-center">
-      <div className="h-[200px] flex flex-col rounded-xl overflow-hidden bg-gray-900 border border-gray-700 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-gray-600">
+      <div
+        className={`h-[200px] flex flex-col rounded-xl overflow-hidden ${cardBg} border ${cardBorder} shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${cardHoverBorder}`}
+      >
         {/* 標籤 */}
         <div className="p-4 pb-2">
           <div className={`${getBgColor(tagColor)} inline-block rounded-full px-3 py-1 text-xs font-medium text-white`}>
@@ -166,29 +183,29 @@ const ProjectCard = ({
 
         {/* 標題和描述 */}
         <div className="px-4 flex-1">
-          <h3 className="text-base font-bold text-white mb-2 line-clamp-1">{title}</h3>
-          <p className="text-xs text-gray-300 mb-3 line-clamp-2">{description}</p>
+          <h3 className={`text-base font-bold ${titleColor} mb-2 line-clamp-1`}>{title}</h3>
+          <p className={`text-xs ${descriptionColor} mb-3 line-clamp-2`}>{description}</p>
         </div>
 
         {/* 任務標籤 */}
         <div className="px-4 pb-1">
-          <div className="text-xs font-medium text-white">Tasks</div>
+          <div className={`text-xs font-medium ${titleColor}`}>Tasks</div>
         </div>
 
         {/* 進度條 */}
         <div className="px-4 pb-4">
-          <div className="h-2 w-full bg-gray-800 rounded-full overflow-hidden mb-2">
+          <div className={`h-2 w-full ${progressBg} rounded-full overflow-hidden mb-2`}>
             <div
               className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"
               style={{ width: progressPercentage }}
             ></div>
           </div>
           <div className="flex justify-between text-xs text-right">
-            <span className="text-gray-300 flex items-center">
+            <span className={`${taskTextColor} flex items-center`}>
               <div className="w-2 h-2 rounded-full bg-blue-500 mr-2 inline-block"></div>
               {completedTasks}/{totalTasks} tasks
             </span>
-            <span className="text-gray-300">{progressPercentage}</span>
+            <span className={taskTextColor}>{progressPercentage}</span>
           </div>
         </div>
       </div>
@@ -224,7 +241,11 @@ const marqueeAnimationStyles = `
 
 // 簡潔版的ProjectMarquee
 export function ProjectMarquee() {
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
+    setMounted(true);
+
     // 動態添加CSS動畫
     if (!document.getElementById('marquee-styles')) {
       const styleEl = document.createElement('style');
@@ -233,6 +254,8 @@ export function ProjectMarquee() {
       document.head.appendChild(styleEl);
     }
   }, []);
+
+  if (!mounted) return null;
 
   return (
     <div className="w-full py-2">
@@ -252,7 +275,13 @@ export function ProjectMarquee() {
 
 // 完整版的ProjectMarquee（可選用）
 export function FullProjectMarquee() {
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === 'dark';
+
   useEffect(() => {
+    setMounted(true);
+
     // 動態添加CSS動畫
     if (!document.getElementById('marquee-styles')) {
       const styleEl = document.createElement('style');
@@ -262,11 +291,18 @@ export function FullProjectMarquee() {
     }
   }, []);
 
+  if (!mounted) return null;
+
+  const bgColor = isDark ? 'bg-gray-950' : 'bg-gray-50';
+  const titleColor = isDark ? 'text-white' : 'text-gray-800';
+  const descriptionColor = isDark ? 'text-gray-400' : 'text-gray-600';
+  const gradientFromColor = isDark ? 'from-gray-950' : 'from-gray-50';
+
   return (
-    <div className="w-full py-16 bg-gray-950">
+    <div className={`w-full py-16 ${bgColor}`}>
       <div className="container mx-auto mb-12 text-center">
-        <h2 className="mb-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">Featured Projects</h2>
-        <p className="mx-auto max-w-2xl text-gray-400">
+        <h2 className={`mb-4 text-3xl font-bold tracking-tight ${titleColor} sm:text-4xl`}>Featured Projects</h2>
+        <p className={`mx-auto max-w-2xl ${descriptionColor}`}>
           Explore our exciting projects in progress. Each project represents our commitment to excellence and pursuit of
           innovation.
         </p>
@@ -283,8 +319,12 @@ export function FullProjectMarquee() {
             <ProjectCard key={project.id} {...project} />
           ))}
         </Marquee>
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-gray-950"></div>
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-gray-950"></div>
+        <div
+          className={`pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r ${gradientFromColor}`}
+        ></div>
+        <div
+          className={`pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l ${gradientFromColor}`}
+        ></div>
       </div>
     </div>
   );
