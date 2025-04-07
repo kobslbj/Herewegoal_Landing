@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ModeToggle } from './modeToggle';
+// import { ModeToggle } from './modeToggle';
 import { Button } from './ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
@@ -14,14 +14,18 @@ export function Navbar() {
         <div className="flex items-center md:hidden">
           <Link href="/" className="flex items-center gap-3 py-2">
             <Image src="/herewegoalLogo.png" alt="Herewegoal Logo" width={32} height={32} />
-            <span className="font-semibold text-2xl">Herewegoal</span>
+            <span className="font-display font-semibold text-2xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground/90 to-foreground/80 drop-shadow-[0.5px_0.5px_0px_rgba(0,0,0,0.1)] dark:drop-shadow-[0.5px_0.5px_0px_rgba(255,255,255,0.1)]">
+              Herewegoal
+            </span>
           </Link>
         </div>
 
         <div className="hidden md:flex items-center gap-10">
           <Link href="/" className="flex items-center gap-3 py-2">
             <Image src="/herewegoalLogo.png" alt="Herewegoal Logo" width={32} height={32} />
-            <span className="text-xl font-bold">Herewegoal</span>
+            <span className="font-display text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground/90 to-foreground/80 drop-shadow-[0.5px_0.5px_0px_rgba(0,0,0,0.1)] dark:drop-shadow-[0.5px_0.5px_0px_rgba(255,255,255,0.1)]">
+              Herewegoal
+            </span>
           </Link>
           <nav className="flex items-center gap-8">
             <Link
@@ -50,7 +54,7 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <ModeToggle />
+            {/* <ModeToggle /> */}
 
             <Sheet>
               <SheetTrigger asChild className="md:hidden">
@@ -60,7 +64,7 @@ export function Navbar() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[280px] sm:w-[350px] p-6">
-                <SheetTitle className="text-lg font-semibold mb-8">Menu</SheetTitle>
+                <SheetTitle className="font-display text-lg font-semibold mb-8">Menu</SheetTitle>
                 <nav className="flex flex-col gap-6">
                   <div className="flex flex-col gap-5">
                     <Link
