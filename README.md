@@ -1,4 +1,4 @@
-# HereWeGoal - Your Tasks, Simplified. Your Goals, Achieved. 🎯
+# Herewegoal - Your Tasks, Simplified. Your Goals, Achieved. 🎯
 
 ![HereWeGoal_Landing_Hero](public/herewegoal_landing.png)
 
