@@ -1,43 +1,99 @@
 'use client';
 
-import { useTheme } from 'next-themes';
-import { MagicCard } from '@/components/magicui/magic-card';
-import { CheckCircle2, Share2, Link, ListTodo } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { cn } from '@/lib/utils';
+import { AnimatedBeamMultipleOutputDemo } from './animatedBeam';
+import { ProjectMarquee } from './marquee';
+import { AnimatedListDemo } from './animatedList';
+import { SpinningText } from '@/components/magicui/spinning-text';
+interface BentoCardProps {
+  title: string;
+  description: string;
+  className?: string;
+  background?: React.ReactNode;
+}
+
+const BentoCard = ({ title, description, className, background }: BentoCardProps) => (
+  <div
+    className={cn(
+      'group relative flex flex-col justify-between overflow-hidden rounded-xl transition-all duration-300',
+      // light styles
+      'bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]',
+      // dark styles
+      'transform-gpu dark:bg-background dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]',
+      className,
+    )}
+  >
+    {background && <div className="absolute inset-0 z-0 overflow-hidden">{background}</div>}
+    <div className="pointer-events-none z-20 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-2 relative bg-gradient-to-b from-background/90 via-background/70 to-transparent">
+      <h3 className="text-xl font-semibold">{title}</h3>
+      <p className="max-w-lg text-muted-foreground">{description}</p>
+    </div>
+    <div className="pointer-events-none absolute inset-0 z-10 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />
+  </div>
+);
 
 export default function FeatureSection() {
-  const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const features = [
+  const features: BentoCardProps[] = [
     {
-      title: 'Clean, Distraction-Free Interface',
-      description: 'Focus on what matters. No clutter, no complexity—just your tasks and goals presented clearly.',
-      icon: <CheckCircle2 className="w-6 h-6 mb-4" />,
+      title: 'Distraction-free by design',
+      description: 'Built for focus, not features.',
+      className: 'col-span-1 row-span-1 md:col-span-1',
+      background: (
+        <div className="absolute inset-0 overflow-hidden flex flex-col items-center opacity-[0.25]">
+          <ProjectMarquee />
+        </div>
+      ),
     },
     {
-      title: 'Instant Task Sharing',
-      description: 'Share tasks with anyone, anywhere. No sign-ups required—just send a link and start collaborating.',
-      icon: <Share2 className="w-6 h-6 mb-4" />,
+      title: 'Task flow from project to today',
+      description: 'Set do dates, not just due dates.',
+      className: 'col-span-1 row-span-1 md:col-span-1 lg:col-span-2',
+      background: (
+        <div className="absolute inset-0 overflow-hidden">
+          <AnimatedListDemo className="opacity-90 mt-15" />
+        </div>
+      ),
     },
     {
-      title: 'Smart Link Delegation',
-      description:
-        'Assign tasks via simple links. Perfect for quick collaborations with clients, friends, or team members.',
-      icon: <Link className="w-6 h-6 mb-4" />,
+      title: 'One-to-many delegation',
+      description: 'Assign tasks in seconds — no signups, no stress.',
+      className: 'col-span-1 row-span-1 md:col-span-2 lg:col-span-2 relative overflow-hidden',
+      background: (
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="w-full h-full flex items-center justify-center max-w-xl mx-auto">
+            <div className="w-full h-full absolute top-30 md:top-26 lg:top-20">
+              <AnimatedBeamMultipleOutputDemo className="opacity-50" />
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
-      title: 'Personal Task Dashboard',
-      description: 'Your tasks, your way. Organize, prioritize, and track progress with our intuitive dashboard.',
-      icon: <ListTodo className="w-6 h-6 mb-4" />,
+      title: 'Tasks, Projects — in one place.',
+      description: ' No more jumping between tools.',
+      className: 'col-span-1 row-span-1 md:col-span-2 lg:col-span-1',
+      background: (
+        <div className="absolute inset-0 pointer-events-none flex items-center justify-center z-0">
+          <SpinningText
+            className="text-lg font-medium opacity-60"
+            radius={8}
+            duration={15}
+            style={{ marginTop: '3rem' }}
+          >
+            Project • Task • Simple
+          </SpinningText>
+        </div>
+      ),
     },
   ];
 
-  // 在客戶端渲染之前不顯示內容
   if (!mounted) {
     return null;
   }
@@ -46,24 +102,17 @@ export default function FeatureSection() {
     <section className="py-24 px-4 sm:px-6 lg:px-8" id="features">
       <div className="max-w-screen-xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
-            What you get with{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-teal-500 to-emerald-500">
-              Herewegoal
-            </span>
-          </h2>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">What makes Herewegoal different</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[22rem]">
           {features.map((feature, index) => (
-            <MagicCard
+            <BentoCard
               key={index}
-              className="p-6 cursor-pointer flex flex-col items-start justify-start"
-              gradientColor={theme === 'dark' ? '#262626' : '#D9D9D955'}
-            >
-              {feature.icon}
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
-            </MagicCard>
+              title={feature.title}
+              description={feature.description}
+              className={feature.className}
+              background={feature.background}
+            />
           ))}
         </div>
       </div>
