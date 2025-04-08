@@ -45,9 +45,6 @@ export function Navbar() {
 
         <div className="flex items-center">
           <nav className="hidden md:flex items-center gap-3 mr-3">
-            <Button variant="ghost" asChild className="px-4">
-              <Link href="https://app.herewegoal.com/login">Sign In</Link>
-            </Button>
             <Button asChild className="px-4">
               <Link href="https://app.herewegoal.com">Get Started</Link>
             </Button>
@@ -81,9 +78,6 @@ export function Navbar() {
                     </Link>
                   </div>
                   <div className="flex flex-col gap-3 pt-6 mt-2 border-t">
-                    <Button variant="ghost" asChild className="justify-start h-11">
-                      <Link href="https://app.herewegoal.com/login">Sign In</Link>
-                    </Button>
                     <Button asChild className="justify-start h-11">
                       <Link href="https://app.herewegoal.com">Get Started</Link>
                     </Button>
