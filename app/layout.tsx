@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Herewegoal – Project & Task Management That’s Actually Simple',
+  title: 'Herewegoal – Lightweight Personal Project Management Tool',
   description:
-    'Finally, a task and project manager that’s built for how you actually work. No complexity — just you, your tasks, and a link.',
+    'A lightweight, easy-to-use project management tool built for personal tasks, goals, and freelance work.',
   keywords: [
     'lightweight project management',
     'task manager without login',
@@ -43,23 +43,23 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://herewegoal.com',
     siteName: 'Herewegoal',
-    title: 'Herewegoal – Project & Task Management That’s Actually Simple',
+    title: 'Herewegoal – Lightweight Personal Project Management Tool',
     description:
-      'Finally, a task and project manager that’s built for how you actually work. No complexity — just you, your tasks, and a link.',
+      'A lightweight, easy-to-use project management tool built for personal tasks, goals, and freelance work.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Herewegoal – Simple Task & Project Management Tool',
+        alt: 'Herewegoal – Lightweight Personal Project Management Tool',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Herewegoal – Project & Task Management That’s Actually Simple',
+    title: 'Herewegoal – Lightweight Personal Project Management Tool',
     description:
-      'No accounts. No onboarding. Just fast task sharing and clear project tracking — made for freelancers, students, and small teams.',
+      'A lightweight, easy-to-use project management tool built for personal tasks, goals, and freelance work.',
     images: ['/twitter-image.jpg'],
   },
   metadataBase: new URL('https://herewegoal.com'),
