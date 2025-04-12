@@ -1,10 +1,10 @@
 'use client';
 
 import { Safari } from '@/components/magicui/safari';
-import imageDark from '@/public/safariDemo.png';
-import imageDarkProject from '@/public/safariDemoProjectTask.png';
-import imageLight from '@/public/safariDemoLightMode.png';
-import imageLightProject from '@/public/safariDemoProjectTaskLightMode.png';
+import imageDark from '@/public/safariDemo1.png';
+import imageDarkProject from '@/public/safariDemoProjectTask1.png';
+import imageLight from '@/public/safariDemoLightMode1.png';
+import imageLightProject from '@/public/safariDemoProjectTaskLightMode1.png';
 import { Particles } from '@/components/magicui/particles';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
