@@ -16,7 +16,7 @@ export default function PricingSection() {
     {
       name: 'Herewegoal Basic',
       price: 'Free',
-      features: ['Up to 6 active projects at the same time', 'Invite up to 3 collaborators', 'Viewable without login'],
+      features: ['Up to 6 active projects at the same time', 'Up to 3 projects folder at the same time'],
       buttonText: 'Get Started',
       buttonVariant: 'outline' as const,
       colors: ['#4F46E5', '#06B6D4', '#10B981'], // 藍紫色系
@@ -25,12 +25,7 @@ export default function PricingSection() {
       name: 'Herewegoal Pro',
       price: '$5',
       period: '/month',
-      features: [
-        'Unlimited projects',
-        'Invite up to 10 collaborators',
-        'More details permission without login',
-        'Support task splitting for better management',
-      ],
+      features: ['Unlimited projects', 'Unlimited projects folder'],
       buttonText: 'Upgrade to Pro',
       buttonVariant: 'default' as const,
       popular: true,
