@@ -48,7 +48,7 @@ export const metadata: Metadata = {
       'A lightweight, easy-to-use project management tool built for personal tasks, goals, and freelance work.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: 'https://herewegoal.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Herewegoal – Lightweight Personal Project Management Tool',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: 'Herewegoal – Lightweight Personal Project Management Tool',
     description:
       'A lightweight, easy-to-use project management tool built for personal tasks, goals, and freelance work.',
-    images: ['/twitter-image.jpg'],
+    images: ['https://herewegoal.com/twitter-image.png'],
   },
   metadataBase: new URL('https://herewegoal.com'),
   alternates: {
