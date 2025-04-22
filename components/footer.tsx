@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import XIcon, { BlueskyIcon } from './icon';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -34,6 +35,26 @@ export default function Footer() {
             <p className="mt-4 text-sm text-muted-foreground">
               Simplify your project management journey. Focus on what matters most - getting things done.
             </p>
+            <div className="mt-4 flex space-x-4">
+              <Link
+                href="https://x.com/HerewegoalApp"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <XIcon className="w-5 h-5 fill-current text-gray-400 dark:text-gray-300 hover:text-gray-600 dark:hover:text-white" />
+                <span className="sr-only">X.com</span>
+              </Link>
+              <Link
+                href="https://bsky.app/profile/herewegoal.bsky.social"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <BlueskyIcon className="w-5 h-5 fill-current text-gray-400 dark:text-gray-300 hover:text-gray-600 dark:hover:text-white" />
+                <span className="sr-only">Bluesky</span>
+              </Link>
+            </div>
           </div>
 
           {/* Links Sections */}
