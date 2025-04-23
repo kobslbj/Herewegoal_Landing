@@ -16,7 +16,11 @@ export default function PricingSection() {
     {
       name: 'Herewegoal Basic',
       price: 'Free',
-      features: ['Up to 6 active projects at the same time', 'Up to 3 projects folder at the same time'],
+      features: [
+        'Manage up to 3 active projects simultaneously',
+        'Create up to 3 project folders',
+        'Task views: Day / Week',
+      ],
       buttonText: 'Get Started',
       buttonVariant: 'outline' as const,
       colors: ['#4F46E5', '#06B6D4', '#10B981'], // 藍紫色系
@@ -25,7 +29,7 @@ export default function PricingSection() {
       name: 'Herewegoal Pro',
       price: '$5',
       period: '/month',
-      features: ['Unlimited projects', 'Unlimited projects folder'],
+      features: ['Unlimited active projects', 'Unlimited project folders', 'Task views: Day / Week / Month'],
       buttonText: 'Upgrade to Pro',
       buttonVariant: 'default' as const,
       popular: true,
