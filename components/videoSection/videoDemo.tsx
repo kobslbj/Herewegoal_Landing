@@ -36,7 +36,7 @@ export function SafariDemo() {
 
   const isDark = resolvedTheme === 'dark';
   const particleColor = isDark ? '#ffffff' : '#000000';
-  const bgColor = isDark ? 'bg-black' : 'bg-gray-50';
+  const bgColor = isDark ? 'bg-black' : 'bg-white';
   const textColor = isDark ? 'text-white' : 'text-black';
 
   const activeView = views[currentView];
