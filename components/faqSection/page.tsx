@@ -12,15 +12,13 @@ export default function FAQSection() {
             How is this different from Notion and Todoist?
           </AccordionTrigger>
           <AccordionContent className="pb-6 px-4 text-base text-gray-700 dark:text-gray-300 space-y-2">
-            <p>
-              Tools like Notion, Todoist, and Trello each solve part of the problem, but often come with trade-offs:
-            </p>
+            <p>Tools like Notion, Todoist each solve part of the problem, but often come with trade-offs:</p>
             <ul className="list-disc pl-6 space-y-1">
               <li>
-                <strong>Todoist</strong> supports projects and team collaboration, but it’s primarily built for managing
-                personal task lists. It lacks built-in timeline views, and essential features due datesrequire a paid
-                plan. To collaborate, users must sign up and join your workspace — which adds friction when working with
-                clients, classmates, or external partners.
+                <strong>Todoist</strong> supports projects and team collaboration, but it&apos;s primarily built for
+                managing personal task lists. It lacks built-in timeline views, and essential features like due dates
+                require a paid plan. To collaborate, users must sign up and join your workspace — which adds friction
+                when working with clients, classmates, or external partners.
               </li>
               <li>
                 <strong>Notion</strong> is highly flexible, but often requires users to build their own task or project
