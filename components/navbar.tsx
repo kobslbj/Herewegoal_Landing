@@ -65,7 +65,7 @@ export function Navbar() {
                 <nav className="flex flex-col gap-6">
                   <div className="flex flex-col gap-5">
                     <Link
-                      href="/features"
+                      href="/#features"
                       className="text-base text-muted-foreground hover:text-foreground transition-colors py-1"
                     >
                       Features
