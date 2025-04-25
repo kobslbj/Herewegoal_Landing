@@ -24,9 +24,9 @@ export default function Footer() {
   return (
     <footer className="border-t border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto max-w-screen-xl px-4 py-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
           {/* Logo Section */}
-          <div className="lg:col-span-2">
+          <div className="col-span-2 sm:col-span-2">
             <div className="flex items-center">
               <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-teal-500 to-emerald-500">
                 Herewegoal
