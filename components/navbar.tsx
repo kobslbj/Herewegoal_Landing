@@ -40,6 +40,12 @@ export function Navbar() {
             >
               Pricing
             </Link>
+            <Link
+              href="/#faq"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-1 py-2"
+            >
+              FAQ
+            </Link>
           </nav>
         </div>
 
@@ -75,6 +81,12 @@ export function Navbar() {
                       className="text-base text-muted-foreground hover:text-foreground transition-colors py-1"
                     >
                       Pricing
+                    </Link>
+                    <Link
+                      href="/#faq"
+                      className="text-base text-muted-foreground hover:text-foreground transition-colors py-1"
+                    >
+                      FAQ
                     </Link>
                   </div>
                   <div className="flex flex-col gap-3 pt-6 mt-2 border-t">

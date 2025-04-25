@@ -34,7 +34,7 @@ export default function HeroSection() {
                 size="lg"
                 className="bg-gradient-to-r from-gray-800 to-gray-600 hover:from-gray-700 hover:to-gray-500 dark:from-gray-100 dark:to-gray-400 dark:hover:from-white dark:hover:to-gray-300 text-white dark:text-black shadow-md transition-all duration-300 ease-in-out"
               >
-                Here we go!!
+                Try it free!
               </Button>
             </Link>
           </div>
