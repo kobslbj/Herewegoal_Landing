@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import XIcon, { BlueskyIcon } from './icon';
+import XIcon, { BlueskyIcon, GmailIcon } from './icon';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -53,6 +53,13 @@ export default function Footer() {
               >
                 <BlueskyIcon className="w-5 h-5 fill-current text-gray-400 dark:text-gray-300 hover:text-gray-600 dark:hover:text-white" />
                 <span className="sr-only">Bluesky</span>
+              </Link>
+              <Link
+                href="mailto:support@herewegoal.com"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <GmailIcon className="w-5 h-5 fill-current text-gray-400 dark:text-gray-300 hover:text-gray-600 dark:hover:text-white" />
+                <span className="sr-only">Email</span>
               </Link>
             </div>
           </div>
