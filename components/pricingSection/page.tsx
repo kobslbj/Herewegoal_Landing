@@ -4,7 +4,7 @@ import { ShineBorder } from '@/components/magicui/shine-border';
 import { Check, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
-
+import Link from 'next/link';
 export default function PricingSection() {
   const [mounted, setMounted] = useState(false);
 
@@ -77,9 +77,11 @@ export default function PricingSection() {
                       </li>
                     ))}
                   </ul>
-                  <Button className="mt-8 w-full" variant={plan.buttonVariant} size="lg">
-                    {plan.buttonText}
-                  </Button>
+                  <Link href="https://app.herewegoal.com">
+                    <Button className="mt-8 w-full cursor-pointer" variant={plan.buttonVariant} size="lg">
+                      {plan.buttonText}
+                    </Button>
+                  </Link>
                 </div>
               </ShineBorder>
             </div>
