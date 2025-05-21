@@ -6,6 +6,7 @@ import { Button } from './ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import Image from 'next/image';
+import { DiscordIcon } from './icon';
 
 export function Navbar() {
   return (
@@ -39,6 +40,15 @@ export function Navbar() {
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-1 py-2"
             >
               Blog
+            </Link>
+            <Link
+              href="https://discord.gg/QncZjDFKYg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-1 py-2 flex items-center gap-1"
+            >
+              <DiscordIcon className="w-4 h-4 fill-current" />
+              Discord
             </Link>
           </nav>
         </div>
@@ -87,6 +97,15 @@ export function Navbar() {
                       className="text-base text-muted-foreground hover:text-foreground transition-colors py-1"
                     >
                       FAQ
+                    </Link>
+                    <Link
+                      href="https://discord.gg/QncZjDFKYg"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-base text-muted-foreground hover:text-foreground transition-colors py-1 flex items-center gap-2"
+                    >
+                      <DiscordIcon className="w-4 h-4 fill-current" />
+                      加入Discord社群
                     </Link>
                   </div>
                   <div className="flex flex-col gap-3 pt-6 mt-2 border-t">

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import XIcon, { BlueskyIcon, GmailIcon } from './icon';
+import XIcon, { BlueskyIcon, GmailIcon, DiscordIcon } from './icon';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -36,6 +36,15 @@ export default function Footer() {
               Simplify your project management journey. Focus on what matters most - getting things done.
             </p>
             <div className="mt-4 flex space-x-4">
+              <Link
+                href="https://discord.gg/QncZjDFKYg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <DiscordIcon className="w-5 h-5 fill-current text-gray-400 dark:text-gray-300 hover:text-gray-600 dark:hover:text-white" />
+                <span className="sr-only">Discord</span>
+              </Link>
               <Link
                 href="https://x.com/HerewegoalApp"
                 target="_blank"
