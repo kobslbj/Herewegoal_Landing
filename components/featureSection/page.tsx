@@ -64,14 +64,14 @@ export default function FeatureSection() {
       ),
     },
     {
-      title: 'One-to-many delegation',
-      description: 'Assign tasks in seconds — no signups, no stress.',
+      title: 'Google Calendar integration',
+      description: 'Sync your projects tasks with your calendar.',
       className: 'col-span-1 row-span-1 md:col-span-2 lg:col-span-2 relative overflow-hidden',
       background: (
         <div className="absolute inset-0 pointer-events-none">
           <div className="w-full h-full flex items-center justify-center max-w-xl mx-auto">
             <div className="w-full h-full absolute top-30 md:top-26 lg:top-20">
-              <AnimatedBeamMultipleOutputDemo className="opacity-50" />
+              <AnimatedBeamMultipleOutputDemo />
             </div>
           </div>
         </div>
