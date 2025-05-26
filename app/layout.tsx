@@ -15,19 +15,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Herewegoal — Plan, Track, and Deliver Projects for Freelancers',
+  title: 'Herewegoal — Project-Oriented Todoist for Students, Freelancers, and Solo Entrepreneurs',
   description:
-    'Herewegoal is a lightweight task and project management tool built for freelancers — simple, clean, and focused on helping you deliver your work on time.',
+    'Herewegoal is a lightweight project and task management tool inspired by Todoist—built for students, freelancers, and solo entrepreneurs. Organize, track, and deliver your projects with ease.',
   keywords: [
+    'project management for students',
     'freelancer project management',
-    'simple task manager for freelancers',
-    'freelance project tracking tool',
-    'lightweight project management app',
+    'solo entrepreneur task manager',
+    'simple project tracking tool',
     'minimalist project planner',
-    'task manager without login',
+    'todoist alternative',
     'personal productivity workspace',
     'calendar + project manager',
-    'freelance productivity tool',
+    'lightweight project management app',
+    'task manager without login',
   ],
   authors: [{ name: 'Herewegoal Team' }],
   creator: 'Herewegoal',
@@ -41,23 +42,23 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://herewegoal.com',
     siteName: 'Herewegoal',
-    title: 'Herewegoal — Plan, Track, and Deliver Projects for Freelancers',
+    title: 'Herewegoal — Project-Oriented Todoist for Students, Freelancers, and Solo Entrepreneurs',
     description:
-      'Manage your freelance work easily — plan tasks, organize projects, and stay on top of deadlines with Herewegoal. No sign-up needed.',
+      'Organize, track, and deliver your projects—Herewegoal is the project-oriented Todoist for students, freelancers, and solo entrepreneurs. No sign-up needed.',
     images: [
       {
         url: 'https://herewegoal.com/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Herewegoal — Plan, Track, and Deliver Projects for Freelancers',
+        alt: 'Herewegoal — Project-Oriented Todoist for Students, Freelancers, and Solo Entrepreneurs',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Herewegoal — Plan, Track, and Deliver Projects for Freelancers',
+    title: 'Herewegoal — Project-Oriented Todoist for Students, Freelancers, and Solo Entrepreneurs',
     description:
-      'Lightweight project management for freelancers — organize your work without complexity. Try Herewegoal free.',
+      'Project management made simple. Herewegoal is built for students, freelancers, and solo entrepreneurs—organize tasks, track progress, and deliver projects with ease.',
     images: ['https://herewegoal.com/twitter-image.png'],
   },
   metadataBase: new URL('https://herewegoal.com'),
