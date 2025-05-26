@@ -23,11 +23,10 @@ export default function HeroSection() {
         <Particles className="absolute inset-0 z-0" quantity={150} ease={80} color={particleColor} refresh />
         <div className="z-10 flex max-w-5xl flex-col items-center gap-8 text-center">
           <p className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-6xl leading-[1.1] bg-clip-text text-transparent bg-gradient-to-br from-gray-900 to-gray-600 dark:from-gray-400 dark:to-gray-200">
-            Plan, Track, and Deliver Projects — <br />
-            Built for Freelancers.
+            Project-Oriented Todoist
           </p>
           <p className="max-w-2xl text-lg leading-relaxed text-gray-600 dark:text-gray-400 sm:text-xl mt-4">
-            Stay organized. Hit deadlines. Deliver better work — with a simple, clean workspace.
+            Organize, track, and deliver your projects—built for students, freelancers, and solo entrepreneurs.
           </p>
           <div className="flex gap-5 mt-10">
             <Link href="https://app.herewegoal.com">
