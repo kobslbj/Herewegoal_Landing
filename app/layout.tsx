@@ -15,20 +15,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Herewegoal — Project-Oriented Todoist for Students, Freelancers, and Solo Entrepreneurs',
-  description:
-    'Herewegoal is a lightweight project and task management tool inspired by Todoist—built for students, freelancers, and solo entrepreneurs. Organize, track, and deliver your projects with ease.',
+  title: 'Herewegoal — Plan smarter. Execute faster.',
+  description: 'A lightweight project management tool for solo founders, startups, and small teams.',
   keywords: [
-    'project management for students',
-    'freelancer project management',
-    'solo entrepreneur task manager',
-    'simple project tracking tool',
-    'minimalist project planner',
-    'todoist alternative',
-    'personal productivity workspace',
-    'calendar + project manager',
-    'lightweight project management app',
-    'task manager without login',
+    'project management for solo founders',
+    'lightweight project management tool',
+    'project management for startups',
+    'project management for small teams',
+    'project management tool for solo founders',
+    'project management tool for startups',
+    'project management tool for small teams',
   ],
   authors: [{ name: 'Herewegoal Team' }],
   creator: 'Herewegoal',
@@ -42,15 +38,14 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://herewegoal.com',
     siteName: 'Herewegoal',
-    title: 'Herewegoal — Project-Oriented Todoist for Students, Freelancers, and Solo Entrepreneurs',
-    description:
-      'Organize, track, and deliver your projects—Herewegoal is the project-oriented Todoist for students, freelancers, and solo entrepreneurs. No sign-up needed.',
+    title: 'Herewegoal — Plan smarter. Execute faster.',
+    description: 'A lightweight project management tool for solo founders, startups, and small teams.',
     images: [
       {
         url: 'https://herewegoal.com/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Herewegoal — Project-Oriented Todoist for Students, Freelancers, and Solo Entrepreneurs',
+        alt: 'Herewegoal — Plan smarter. Execute faster.',
       },
     ],
   },
