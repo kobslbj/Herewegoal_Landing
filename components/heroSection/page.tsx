@@ -1,43 +1,70 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import { Particles } from '@/components/magicui/particles';
 import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
+import { Particles } from '@/components/magicui/particles';
 import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
+import { DiscordIcon } from '@/components/icon';
 
 export default function HeroSection() {
   const { resolvedTheme } = useTheme();
-  const [currentTheme, setCurrentTheme] = useState<string>('light');
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setCurrentTheme(resolvedTheme || 'light');
-  }, [resolvedTheme]);
+    setMounted(true);
+  }, []);
 
-  // 粒子顏色根據主題變化
-  const particleColor = currentTheme === 'dark' ? '#444444' : '#bbbbbb';
+  if (!mounted) return null;
+
+  const isDark = resolvedTheme === 'dark';
+  const particleColor = isDark ? '#ffffff' : '#000000';
+  const bgColor = isDark ? 'bg-black' : 'bg-white';
+  const textColor = isDark ? 'text-white' : 'text-black';
 
   return (
-    <section className="relative mx-auto w-full bg-white dark:bg-black text-black dark:text-white">
-      <div className="relative flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center py-24 sm:py-32 md:py-40 px-4 sm:px-6 lg:px-8">
-        <Particles className="absolute inset-0 z-0" quantity={150} ease={80} color={particleColor} refresh />
-        <div className="z-10 flex max-w-5xl flex-col items-center gap-8 text-center">
-          <p className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-6xl leading-[1.1] bg-clip-text text-transparent bg-gradient-to-br from-gray-900 to-gray-600 dark:from-gray-400 dark:to-gray-200">
-            Plan smarter. Execute faster.
-          </p>
-          <p className="max-w-2xl text-lg leading-relaxed text-gray-600 dark:text-gray-400 sm:text-xl mt-4">
-            A lightweight project management tool for solo founders, startups, and small teams.
-          </p>
-          <div className="flex gap-5 mt-10">
-            <Link href="https://app.herewegoal.com">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-gray-800 to-gray-600 hover:from-gray-700 hover:to-gray-500 dark:from-gray-100 dark:to-gray-400 dark:hover:from-white dark:hover:to-gray-300 text-white dark:text-black shadow-md transition-all duration-300 ease-in-out"
-              >
-                Get Started Free →
-              </Button>
-            </Link>
-          </div>
+    <section id="hero" className={`relative w-full ${bgColor} ${textColor}`}>
+      <Particles className="absolute inset-0 z-0" quantity={100} ease={100} color={particleColor} refresh />
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl flex-col items-center justify-center px-4 text-center sm:px-6 md:px-8">
+        {/* 主標題 */}
+        <h1 className="-translate-y-4 animate-fade-in text-balance bg-gradient-to-br from-black from-30% to-black/40 bg-clip-text py-4 text-3xl font-medium leading-tight tracking-tighter text-transparent opacity-0 [--animation-delay:200ms] dark:from-white dark:to-white/40 sm:py-6 sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl">
+          Project Management for
+          <br className="hidden sm:block" /> Solo Founders and Small Teams
+        </h1>
+
+        {/* 描述文字 */}
+        <p className="mb-8 -translate-y-4 animate-fade-in text-balance text-base tracking-tight text-gray-400 opacity-0 [--animation-delay:400ms] sm:mb-10 sm:text-lg md:mb-12 md:text-xl">
+          From zero to launch, Herewegoal helps you stay focused, move fast, and ship work — without the busywork.
+        </p>
+
+        {/* 按鈕區域 */}
+        <div className="flex flex-col gap-3 items-center sm:flex-row sm:gap-4">
+          <Link href="https://app.herewegoal.com">
+            <Button 
+              size="lg"
+              className="-translate-y-4 animate-fade-in gap-1 rounded-lg text-white opacity-0 ease-in-out [--animation-delay:600ms] dark:text-black group w-full sm:w-auto"
+            >
+              <span>Get Started for free</span>
+              <ArrowRight className="ml-1 size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
+            </Button>
+          </Link>
+          
+          <Link 
+            href="https://discord.gg/QncZjDFKYg"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="-translate-y-4 animate-fade-in gap-1 rounded-lg opacity-0 ease-in-out [--animation-delay:700ms] group border-gray-300 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800 w-full sm:w-auto"
+            >
+              <DiscordIcon className="w-4 h-4 fill-current" />
+              <span>Join Discord</span>
+              <ArrowRight className="ml-1 size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
