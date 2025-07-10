@@ -16,7 +16,7 @@ export function TaskPageVideo({ className }: VideoProps) {
 export function ProjectPageVideo({ className }: VideoProps) {
   return (
     <video className={cn('size-full object-cover', className)} autoPlay loop muted playsInline preload="none">
-      <source src="/projectDemo.mp4" type="video/mp4" />
+      <source src="/projectDemo_new.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   );
