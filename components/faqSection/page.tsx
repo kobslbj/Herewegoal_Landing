@@ -9,28 +9,31 @@ export default function FAQSection() {
       <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
         <AccordionItem value="item-2">
           <AccordionTrigger className="py-6 px-4 text-lg font-medium text-left text-gray-900 dark:text-white hover:no-underline cursor-pointer">
-            How is this different from Notion and Todoist?
+            How is this different from Notion ?
           </AccordionTrigger>
           <AccordionContent className="pb-6 px-4 text-base text-gray-700 dark:text-gray-300 space-y-2">
-            <p>Tools like Notion, Todoist each solve part of the problem, but often come with trade-offs:</p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>
-                <strong>Todoist</strong> supports projects and team collaboration, but it&apos;s primarily built for
-                managing personal task lists. It lacks built-in timeline views, and essential features like due dates
-                require a paid plan. To collaborate, users must sign up and join your workspace — which adds friction
-                when working with clients, classmates, or external partners.
-              </li>
-              <li>
-                <strong>Notion</strong> is highly flexible, but often requires users to build their own task or project
-                system from scratch. For many, it becomes overwhelming instead of productive.
-              </li>
-            </ul>
-            <p className="mt-2">
-              <strong>Herewegoal gives you the full picture</strong> — daily tasks, long-term projects, and timelines
-              that stay in sync. Assign tasks to anyone instantly with just a link — no account needed. Switch between
-              day, week, and project views effortlessly. Stay focused, stay organized, and keep things moving — without
-              the complexity.
-            </p>
+            <strong>Notion</strong> is highly flexible, but often requires users to build their own task or project
+            system from scratch. For many, it becomes overwhelming instead of productive.
+            <div className="mt-2">
+              <p>
+                <strong>Herewegoal is built for founders.</strong>
+                <br />
+                From day one, it gives you a ready-to-use task flow designed for going from 0 to 1:
+              </p>
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 my-3">
+                <div className="flex items-center gap-2">
+                  <span className="text-green-500">✅</span>
+                  <span>Fast setup</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-green-500">✅</span>
+                  <span>No overthinking</span>
+                </div>
+              </div>
+              <p className="italic text-gray-600 dark:text-gray-400">
+                Less time building systems. More time building your product.
+              </p>
+            </div>
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-6">
@@ -42,16 +45,7 @@ export default function FAQSection() {
             — Herewegoal helps you stay focused, without the complexity of traditional project management tools.
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-3">
-          <AccordionTrigger className="py-6 px-4 text-lg font-medium text-left text-gray-900 dark:text-white hover:no-underline cursor-pointer">
-            Do I need an account to assign tasks to someone else?
-          </AccordionTrigger>
-          <AccordionContent className="pb-6 px-4 text-base text-gray-700 dark:text-gray-300">
-            Nope! That&apos;s one of our best features 🙌 You can create a task and share it with a client, teammate, or
-            classmate — all they need is the link.
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-5">
+        <AccordionItem value="item-4">
           <AccordionTrigger className="py-6 px-4 text-lg font-medium text-left text-gray-900 dark:text-white hover:no-underline cursor-pointer">
             Is Herewegoal free?
           </AccordionTrigger>

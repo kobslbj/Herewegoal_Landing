@@ -41,7 +41,7 @@ export default function HeroSection() {
         {/* 按鈕區域 */}
         <div className="flex flex-col gap-3 items-center sm:flex-row sm:gap-4">
           <Link href="https://app.herewegoal.com">
-            <Button 
+            <Button
               size="lg"
               className="-translate-y-4 animate-fade-in gap-1 rounded-lg text-white opacity-0 ease-in-out [--animation-delay:600ms] dark:text-black group w-full sm:w-auto"
             >
@@ -49,14 +49,10 @@ export default function HeroSection() {
               <ArrowRight className="ml-1 size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
             </Button>
           </Link>
-          
-          <Link 
-            href="https://discord.gg/QncZjDFKYg"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button 
-              variant="outline" 
+
+          <Link href="https://discord.gg/QncZjDFKYg" target="_blank" rel="noopener noreferrer">
+            <Button
+              variant="outline"
               size="lg"
               className="-translate-y-4 animate-fade-in gap-1 rounded-lg opacity-0 ease-in-out [--animation-delay:700ms] group border-gray-300 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800 w-full sm:w-auto"
             >
