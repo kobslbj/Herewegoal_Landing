@@ -23,7 +23,7 @@ export function Navbar() {
 
         <div className="hidden md:flex items-center gap-10">
           <Link href="/" className="flex items-center gap-3 py-2">
-            <Image src="/HerewegoalLogo2.png" alt="Herewegoal Logo" width={32} height={32} />
+            <Image src="/herewegoal_logo.png" alt="Herewegoal Logo" width={32} height={32} />
             <span className="font-display text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground/90 to-foreground/80 drop-shadow-[0.5px_0.5px_0px_rgba(0,0,0,0.1)] dark:drop-shadow-[0.5px_0.5px_0px_rgba(255,255,255,0.1)]">
               Herewegoal
             </span>
