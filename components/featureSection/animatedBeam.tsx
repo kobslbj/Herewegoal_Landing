@@ -126,7 +126,7 @@ const Icons = {
   herewegoal: ({ className }: { className?: string } = {}) => (
     <div className={cn('flex items-center justify-center w-full h-full', className)}>
       <Image
-        src="/herewegoal_landing_new.png"
+        src="/herewegoal_logo.png"
         alt="HereWeGoal Logo"
         width={48}
         height={48}
