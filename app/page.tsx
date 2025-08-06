@@ -1,22 +1,55 @@
-import HeroSection from '@/components/heroSection/page';
-import FeatureSection from '@/components/featureSection/page';
-import VideoDemo from '@/components/videoSection/videoDemo';
-import FAQSection from '@/components/faqSection/page';
-import { Metadata } from 'next';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Home | Herewegoal',
-  description:
-    'Herewegoal is a simple, intuitive project management tool designed for freelancers and individuals, featuring easy task management and collaboration.',
-};
+import HeroSection from '@/components/heroSection/page';
+import ProblemSection from '@/components/problemSection/page';
+import SolutionSection from '@/components/solutionSection/page';
+import WaitingListSection from '@/components/waitingListSection/page';
+import { Particles } from "@/components/magicui/particles";
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const [color, setColor] = useState("#ffffff");
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    setColor(resolvedTheme === "dark" ? "#ffffff" : "#000000");
+  }, [resolvedTheme]);
+
+  if (!mounted) return null;
+
+  const isDark = resolvedTheme === 'dark';
+
   return (
-    <>
-      <HeroSection />
-      <VideoDemo />
-      <FeatureSection />
-      <FAQSection />
-    </>
+    <div 
+      className={`relative w-full overflow-hidden ${
+        isDark ? 'bg-black text-white' : 'bg-white text-black'
+      }`}
+      style={{
+        scrollSnapType: 'y mandatory',
+        height: '100vh',
+        overflowY: 'auto'
+      }}
+    >
+      <Particles
+        className="fixed inset-0 z-0"
+        quantity={100}
+        ease={80}
+        color={color}
+        refresh
+      />
+      
+      <div className="relative z-10">
+        <HeroSection />
+        <ProblemSection />
+        <SolutionSection />
+        <WaitingListSection />
+      </div>
+    </div>
   );
 }
