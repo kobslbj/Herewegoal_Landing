@@ -6,7 +6,6 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
 import {
   Form,
   FormControl,
@@ -47,7 +46,7 @@ export default function WaitingList() {
       } else {
         toast.error(result.error)
       }
-    } catch (error) {
+    } catch {
       toast.error('System error, please try again later')
     } finally {
       setIsSubmitting(false)
@@ -59,7 +58,7 @@ export default function WaitingList() {
       <div className="space-y-2 text-center">
         <h2 className="text-3xl font-bold tracking-tight">Join the Waitlist</h2>
         <p className="text-muted-foreground">
-          Be the first to experience our product when it's ready
+          Be the first to experience our product when it&apos;s ready
         </p>
       </div>
       
