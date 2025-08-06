@@ -1,12 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
-import { Particles } from '@/components/magicui/particles';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 import { DiscordIcon } from '@/components/icon';
+import { TypingAnimation } from '@/components/magicui/typing-animation';
 
 export default function HeroSection() {
   const { resolvedTheme } = useTheme();
@@ -19,34 +19,54 @@ export default function HeroSection() {
   if (!mounted) return null;
 
   const isDark = resolvedTheme === 'dark';
-  const particleColor = isDark ? '#ffffff' : '#000000';
-  const bgColor = isDark ? 'bg-black' : 'bg-white';
-  const textColor = isDark ? 'text-white' : 'text-black';
 
   return (
-    <section id="hero" className={`relative w-full ${bgColor} ${textColor}`}>
-      <Particles className="absolute inset-0 z-0" quantity={100} ease={100} color={particleColor} refresh />
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl flex-col items-center justify-center px-4 text-center sm:px-6 md:px-8">
-        {/* 主標題 */}
-        <h1 className="-translate-y-4 animate-fade-in text-balance bg-gradient-to-br from-black from-30% to-black/40 bg-clip-text py-4 text-3xl font-medium leading-tight tracking-tighter text-transparent opacity-0 [--animation-delay:200ms] dark:from-white dark:to-white/40 sm:py-6 sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl">
-          Project Management for
-          <br className="hidden sm:block" /> Solo Founders and Small Teams
-        </h1>
+    <section 
+      id="hero" 
+      className={`relative w-full min-h-screen overflow-hidden ${isDark ? 'bg-black text-white' : 'bg-white text-black'}`}
+    >
+      <div 
+        className={`absolute inset-0 ${
+          isDark 
+            ? 'bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)]' 
+            : 'bg-[linear-gradient(rgba(0,0,0,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.1)_1px,transparent_1px)]'
+        } bg-[size:50px_50px]`} 
+      />
+      
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col items-start justify-start pt-24 sm:pt-32 md:pt-40 px-8 sm:px-12 md:px-16 lg:px-20">
+        <div className="mb-6 max-w-5xl">
+          <h1 className="text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+            The AI workspace for
+            <br />
+            <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+              idea to spec clarity
+            </span>
+          </h1>
+        </div>
 
-        {/* 描述文字 */}
-        <p className="mb-8 -translate-y-4 animate-fade-in text-balance text-base tracking-tight text-gray-400 opacity-0 [--animation-delay:400ms] sm:mb-10 sm:text-lg md:mb-12 md:text-xl">
-          From zero to launch, Herewegoal helps you stay focused, move fast, and ship work — without the busywork.
-        </p>
+        <div className="mb-10 max-w-3xl">
+          <TypingAnimation
+            className={`text-lg tracking-normal sm:text-xl md:text-lg leading-relaxed ${
+              isDark ? 'text-gray-300' : 'text-gray-600'
+            }`}
+            duration={30}
+          >
+            Herewegoal helps lean teams align fast with example-driven specs powered by GenAI.
+          </TypingAnimation>
+        </div>
 
-        {/* 按鈕區域 */}
-        <div className="flex flex-col gap-3 items-center sm:flex-row sm:gap-4">
+        <div className="flex flex-col gap-4 items-start sm:flex-row sm:gap-6 mt-2">
           <Link href="https://app.herewegoal.com">
             <Button
               size="lg"
-              className="-translate-y-4 animate-fade-in gap-1 rounded-lg text-white opacity-0 ease-in-out [--animation-delay:600ms] dark:text-black group w-full sm:w-auto"
+              className={`rounded-xl px-10 py-5 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-lg ${
+                isDark 
+                  ? 'bg-white text-black hover:bg-gray-100' 
+                  : 'bg-black text-white hover:bg-gray-800'
+              }`}
             >
-              <span>Get Started for free</span>
-              <ArrowRight className="ml-1 size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
+              Get Started
+              <ArrowRight className="ml-2 size-5 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
             </Button>
           </Link>
 
@@ -54,14 +74,18 @@ export default function HeroSection() {
             <Button
               variant="outline"
               size="lg"
-              className="-translate-y-4 animate-fade-in gap-1 rounded-lg opacity-0 ease-in-out [--animation-delay:700ms] group border-gray-300 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800 w-full sm:w-auto"
+              className={`gap-3 rounded-xl px-10 py-5 transition-all duration-300 text-lg font-medium border-2 ${
+                isDark 
+                  ? 'border-gray-600 text-white hover:bg-gray-800 hover:border-gray-400' 
+                  : 'border-gray-300 text-black hover:bg-gray-50 hover:border-gray-400'
+              }`}
             >
-              <DiscordIcon className="w-4 h-4 fill-current" />
-              <span>Join Discord</span>
-              <ArrowRight className="ml-1 size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
+              <DiscordIcon className="w-5 h-5 fill-current" />
+              Discord
             </Button>
           </Link>
         </div>
+
       </div>
     </section>
   );
