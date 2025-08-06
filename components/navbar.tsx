@@ -29,7 +29,7 @@ export function Navbar() {
             </span>
           </Link>
           <nav className="flex items-center gap-8">
-            <Link
+            {/* <Link
               href="/pricing"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-1 py-2"
             >
@@ -40,7 +40,7 @@ export function Navbar() {
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-1 py-2"
             >
               Blog
-            </Link>
+            </Link> */}
             <Link
               href="https://discord.gg/QncZjDFKYg"
               target="_blank"
@@ -54,11 +54,11 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center">
-          <nav className="hidden md:flex items-center gap-3 mr-3">
+          {/* <nav className="hidden md:flex items-center gap-3 mr-3">
             <Button asChild className="px-4">
               <Link href="https://app.herewegoal.com">Get Started</Link>
             </Button>
-          </nav>
+          </nav> */}
 
           <div className="flex items-center gap-2">
             <ModeToggle />
@@ -74,7 +74,7 @@ export function Navbar() {
                 <SheetTitle className="font-display text-lg font-semibold mb-8">Menu</SheetTitle>
                 <nav className="flex flex-col gap-6">
                   <div className="flex flex-col gap-5">
-                    <Link
+                    {/* <Link
                       href="/#features"
                       className="text-base text-muted-foreground hover:text-foreground transition-colors py-1"
                     >
@@ -97,7 +97,7 @@ export function Navbar() {
                       className="text-base text-muted-foreground hover:text-foreground transition-colors py-1"
                     >
                       FAQ
-                    </Link>
+                    </Link> */}
                     <Link
                       href="https://discord.gg/QncZjDFKYg"
                       target="_blank"
@@ -105,14 +105,14 @@ export function Navbar() {
                       className="text-base text-muted-foreground hover:text-foreground transition-colors py-1 flex items-center gap-2"
                     >
                       <DiscordIcon className="w-4 h-4 fill-current" />
-                      加入Discord社群
+                      Join Discord
                     </Link>
                   </div>
-                  <div className="flex flex-col gap-3 pt-6 mt-2 border-t">
+                  {/* <div className="flex flex-col gap-3 pt-6 mt-2 border-t">
                     <Button asChild className="justify-start h-11">
                       <Link href="https://app.herewegoal.com">Get Started</Link>
                     </Button>
-                  </div>
+                  </div> */}
                 </nav>
               </SheetContent>
             </Sheet>

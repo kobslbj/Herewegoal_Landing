@@ -5,13 +5,13 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
-    {
-      title: 'Product',
-      links: [
-        { name: 'Features', href: '/#features' },
-        { name: 'Pricing', href: '/pricing' },
-      ],
-    },
+    // {
+    //   title: 'Product',
+    //   links: [
+    //     { name: 'Features', href: '/#features' },
+    //     { name: 'Pricing', href: '/pricing' },
+    //   ],
+    // },
     {
       title: 'Legal',
       links: [
@@ -33,7 +33,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
-              Simplify your project management journey. Focus on what matters most - getting things done.
+              Specs are the new prompt.
+Build clarity before you build product.
             </p>
             <div className="mt-4 flex space-x-4">
               <Link
@@ -97,7 +98,7 @@ export default function Footer() {
         <div className="mt-8 pt-8 border-t border-border/40">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">© {currentYear} Herewegoal. All rights reserved.</p>
-            <p className="text-sm text-muted-foreground">Made with ❤️ for better productivity</p>
+            <p className="text-sm text-muted-foreground">Made with ❤️ for better alignment</p>
           </div>
         </div>
       </div>
