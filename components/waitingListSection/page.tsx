@@ -17,6 +17,7 @@ import {
 } from '@/components/ui/form'
 import { toast } from 'sonner'
 import { joinWaitingList } from '@/lib/actions'
+import ParticlesWrapper from '@/components/particles-wrapper'
 
 const formSchema = z.object({
   gmail: z.string().email('Please enter a valid Gmail address').min(1, 'Gmail address is required'),
@@ -71,6 +72,7 @@ export default function WaitingListSection() {
       className="relative w-full h-screen overflow-hidden"
       style={{ scrollSnapAlign: 'start' }}
     >
+      <ParticlesWrapper />
       
       <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center px-8 sm:px-12 md:px-16 lg:px-20">
         <div className="mb-6 max-w-5xl text-center">

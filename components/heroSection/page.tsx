@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { DiscordIcon } from '@/components/icon';
 import { TypingAnimation } from '@/components/magicui/typing-animation';
+import ParticlesWrapper from '@/components/particles-wrapper';
 
 
 export default function HeroSection() {
@@ -28,6 +29,7 @@ export default function HeroSection() {
       className="relative w-full h-screen overflow-hidden"
       style={{ scrollSnapAlign: 'start' }}
     >
+      <ParticlesWrapper />
       
       <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center px-8 sm:px-12 md:px-16 lg:px-20">
         <div className="mb-6 max-w-5xl text-center">

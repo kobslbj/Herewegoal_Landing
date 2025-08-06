@@ -2,6 +2,7 @@
 
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import ParticlesWrapper from '@/components/particles-wrapper';
 
 export default function ProblemSection() {
   const { resolvedTheme } = useTheme();
@@ -27,6 +28,7 @@ export default function ProblemSection() {
       className="relative w-full min-h-screen py-16 sm:py-20 md:py-24 lg:h-screen overflow-hidden flex items-center"
       style={{ scrollSnapAlign: 'start' }}
     >
+      <ParticlesWrapper />
       
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         <div className="flex flex-col items-start justify-start space-y-6 sm:space-y-8 md:space-y-10">
