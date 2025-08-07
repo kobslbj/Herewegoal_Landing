@@ -7,13 +7,24 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/s
 import { Menu } from 'lucide-react';
 import Image from 'next/image';
 import { DiscordIcon } from './icon';
+import { LanguageSwitcher } from './language-switcher';
+import type { Locale } from '@/lib/i18n';
 
-export function Navbar() {
+type Props = {
+  locale: Locale;
+  dict: {
+    navbar: {
+      discord: string;
+    };
+  };
+};
+
+export function Navbar({ locale }: Props) {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto max-w-screen-xl flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         <div className="flex items-center md:hidden">
-          <Link href="/" className="flex items-center gap-3 py-2">
+          <Link href={`/${locale}`} className="flex items-center gap-3 py-2">
             <Image src="/herewegoal_logo.png" alt="Herewegoal Logo" width={32} height={32} />
             <span className="font-display font-semibold text-2xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground/90 to-foreground/80 drop-shadow-[0.5px_0.5px_0px_rgba(0,0,0,0.1)] dark:drop-shadow-[0.5px_0.5px_0px_rgba(255,255,255,0.1)]">
               Herewegoal
@@ -22,7 +33,7 @@ export function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center gap-10">
-          <Link href="/" className="flex items-center gap-3 py-2">
+          <Link href={`/${locale}`} className="flex items-center gap-3 py-2">
             <Image src="/herewegoal_logo.png" alt="Herewegoal Logo" width={32} height={32} />
             <span className="font-display text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground/90 to-foreground/80 drop-shadow-[0.5px_0.5px_0px_rgba(0,0,0,0.1)] dark:drop-shadow-[0.5px_0.5px_0px_rgba(255,255,255,0.1)]">
               Herewegoal
@@ -61,6 +72,7 @@ export function Navbar() {
           </nav> */}
 
           <div className="flex items-center gap-2">
+            <LanguageSwitcher currentLocale={locale} />
             <ModeToggle />
 
             <Sheet>
@@ -74,6 +86,9 @@ export function Navbar() {
                 <SheetTitle className="font-display text-lg font-semibold mb-8">Menu</SheetTitle>
                 <nav className="flex flex-col gap-6">
                   <div className="flex flex-col gap-5">
+                    <div className="mb-4">
+                      <LanguageSwitcher currentLocale={locale} />
+                    </div>
                     {/* <Link
                       href="/#features"
                       className="text-base text-muted-foreground hover:text-foreground transition-colors py-1"

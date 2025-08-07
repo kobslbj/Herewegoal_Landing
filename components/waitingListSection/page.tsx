@@ -18,12 +18,27 @@ import {
 import { toast } from 'sonner'
 import { joinWaitingList } from '@/lib/actions'
 import ParticlesWrapper from '@/components/particles-wrapper'
+import type { Locale } from '@/lib/i18n'
 
-const formSchema = z.object({
-  gmail: z.string().email('Please enter a valid Gmail address').min(1, 'Gmail address is required'),
+type Props = {
+  locale: Locale;
+  dict: {
+    waitingList: {
+      title: string;
+      subtitle: string;
+      emailPlaceholder: string;
+      submit: string;
+      success: string;
+      error: string;
+    };
+  };
+};
+
+const getFormSchema = (dict: Props['dict']) => z.object({
+  gmail: z.string().email(dict.waitingList.error).min(1, dict.waitingList.error),
 })
 
-export default function WaitingListSection() {
+export default function WaitingListSection({ locale, dict }: Props) {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -32,6 +47,7 @@ export default function WaitingListSection() {
     setMounted(true);
   }, []);
 
+  const formSchema = getFormSchema(dict);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -49,13 +65,13 @@ export default function WaitingListSection() {
       const result = await joinWaitingList(formData)
       
       if (result.success) {
-        toast.success(result.message)
+        toast.success(dict.waitingList.success)
         form.reset()
       } else {
-        toast.error(result.error)
+        toast.error(dict.waitingList.error)
       }
     } catch {
-      toast.error('System error, please try again later')
+      toast.error(dict.waitingList.error)
     } finally {
       setIsSubmitting(false)
     }
@@ -77,7 +93,7 @@ export default function WaitingListSection() {
       <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center px-8 sm:px-12 md:px-16 lg:px-20">
         <div className="mb-6 max-w-5xl text-center">
           <h2 className="text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-            Join the Waitlist
+            {dict.waitingList.title}
           </h2>
         </div>
 
@@ -85,7 +101,7 @@ export default function WaitingListSection() {
           <p className={`text-lg tracking-normal sm:text-xl md:text-lg leading-relaxed ${
             isDark ? 'text-gray-300' : 'text-gray-600'
           }`}>
-            Be the first to experience AI-powered spec clarity.
+            {dict.waitingList.subtitle}
           </p>
         </div>
 
@@ -100,11 +116,11 @@ export default function WaitingListSection() {
                     <FormLabel className={`text-lg font-medium ${
                       isDark ? 'text-white' : 'text-black'
                     }`}>
-                      Gmail Address
+                      {locale === 'zh-TW' ? '電子郵件地址' : 'Gmail Address'}
                     </FormLabel>
                     <FormControl>
                       <Input
-                        placeholder="your.email@gmail.com"
+                        placeholder={dict.waitingList.emailPlaceholder}
                         type="email"
                         className={`h-12 text-lg ${
                           isDark 
@@ -128,7 +144,7 @@ export default function WaitingListSection() {
                 }`}
                 disabled={isSubmitting}
               >
-                {isSubmitting ? 'Joining...' : 'Join Waitlist'}
+                {isSubmitting ? (locale === 'zh-TW' ? '加入中...' : 'Joining...') : dict.waitingList.submit}
               </Button>
             </form>
           </Form>
@@ -138,7 +154,7 @@ export default function WaitingListSection() {
           <p className={`text-lg leading-relaxed ${
             isDark ? 'text-gray-300' : 'text-gray-600'
           }`}>
-            We&apos;ll notify you when Herewegoal is ready to transform how your team builds features.
+            {locale === 'zh-TW' ? '當 Herewegoal 準備好時，我們會通知您。' : "We'll notify you when Herewegoal is ready to transform how your team builds features."}
           </p>
         </div>
       </div>

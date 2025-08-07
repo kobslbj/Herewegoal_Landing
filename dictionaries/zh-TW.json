@@ -1,0 +1,64 @@
+{
+  "common": {
+    "loading": "載入中...",
+    "error": "錯誤",
+    "success": "成功",
+    "cancel": "取消",
+    "confirm": "確認",
+    "close": "關閉"
+  },
+  "navigation": {
+    "home": "首頁",
+    "pricing": "價格",
+    "blog": "部落格",
+    "waitingList": "加入等候名單"
+  },
+  "navbar": {
+    "discord": "Discord"
+  },
+  "hero": {
+    "title": {
+      "part1": "從需求到規格",
+      "part2": "一次到位"
+    },
+    "subtitle": "透過 GenAI，幫助小團隊快速對齊。將您的需求轉化為可交付的產品。",
+    "cta": "加入等候名單",  
+    "learnMore": "了解更多"
+  },
+  "problem": {
+    "title": "問題所在",
+    "subtitle": "真正的問題不是開發速度——而是團隊共識。",
+    "quote": "Prompt 工程已死。未來是規格工程。",
+    "quoteAuthor": "—— Sean Grove, OpenAI",
+    "problems": [
+      "想法模糊 → 規格模糊 → 產品也跟著模糊",
+      "花太多時間在來回溝通需求，真正開發的時間反而很少",
+      "AI 工具幫你寫 code，卻沒人幫你釐清該寫什麼"
+
+    ],
+    "solution": "告別 PM、工程師和 QA 之間無止盡的來回溝通。利用 Herewegoal，你可以獨立將想法轉化為清晰、可執行的計畫。"
+  },
+  "solution": {
+    "title": "解決方案",
+    "subtitle": "從想法到規格——結構化步驟。",
+    "solutions": [
+      "用自然語言描述您的功能想法",
+      "透過了解程式碼架構與產品背景資訊，生成更精準的產品規格",
+      "讓每一位團隊成員都可以透過規格，快速了解產品需求與架構"
+    ],
+    "conclusion": ""
+  },
+  "waitingList": {
+    "title": "加入我們的等候名單",
+    "subtitle": "成為首批 Herewegoal 轉型的用戶",
+    "emailPlaceholder": "輸入您的電子郵件地址",
+    "submit": "加入等候名單",
+    "success": "謝謝！您已被加入我們的等候名單。",
+    "error": "發生錯誤，請再試一次。"
+  },
+  "footer": {
+    "copyright": "© 2025 Herewegoal. 版權所有。",
+    "privacy": "隱私政策",
+    "terms": "服務條款"
+  }
+}

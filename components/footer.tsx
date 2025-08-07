@@ -1,7 +1,19 @@
 import Link from 'next/link';
 import XIcon, { BlueskyIcon, GmailIcon, DiscordIcon } from './icon';
+import type { Locale } from '@/lib/i18n';
 
-export default function Footer() {
+type Props = {
+  locale: Locale;
+  dict: {
+    footer: {
+      privacy: string;
+      terms: string;
+      copyright: string;
+    };
+  };
+};
+
+export default function Footer({ locale, dict }: Props) {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
@@ -13,10 +25,10 @@ export default function Footer() {
     //   ],
     // },
     {
-      title: 'Legal',
+      title: locale === 'zh-TW' ? '法律' : 'Legal',
       links: [
-        { name: 'Privacy Policy', href: '/privacy' },
-        { name: 'Terms of Conditions', href: '/terms' },
+        { name: dict.footer.privacy, href: `/${locale}/privacy` },
+        { name: dict.footer.terms, href: `/${locale}/terms` },
       ],
     },
   ];
@@ -33,8 +45,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
-              Specs are the new prompt.
-Build clarity before you build product.
+              {locale === 'zh-TW' ? 'Specs are the new prompt.\nBuild clarity before you build product.' : 'Specs are the new prompt.\nBuild clarity before you build product.'}
             </p>
             <div className="mt-4 flex space-x-4">
               <Link
@@ -97,8 +108,8 @@ Build clarity before you build product.
         {/* Copyright Section */}
         <div className="mt-8 pt-8 border-t border-border/40">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">© {currentYear} Herewegoal. All rights reserved.</p>
-            <p className="text-sm text-muted-foreground">Made with ❤️ for better alignment</p>
+            <p className="text-sm text-muted-foreground">{dict.footer.copyright.replace('2024', currentYear.toString())}</p>
+            <p className="text-sm text-muted-foreground">{locale === 'zh-TW' ? 'Made with ❤️ for better alignment' : 'Made with ❤️ for better alignment'}</p>
           </div>
         </div>
       </div>

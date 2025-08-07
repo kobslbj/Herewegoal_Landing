@@ -8,9 +8,23 @@ import { ArrowRight } from 'lucide-react';
 import { DiscordIcon } from '@/components/icon';
 import { TypingAnimation } from '@/components/magicui/typing-animation';
 import ParticlesWrapper from '@/components/particles-wrapper';
+import type { Locale } from '@/lib/i18n';
 
+type Props = {
+  locale: Locale;
+  dict: {
+    hero: {
+      title: {
+        part1: string;
+        part2: string;
+      };
+      subtitle: string;
+      cta: string;
+    };
+  };
+};
 
-export default function HeroSection() {
+export default function HeroSection({ locale, dict }: Props) {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -34,11 +48,23 @@ export default function HeroSection() {
       <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center px-8 sm:px-12 md:px-16 lg:px-20">
         <div className="mb-6 max-w-5xl text-center">
           <h1 className="text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-            The AI workspace for
-            <br />
-            <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              idea to spec clarity
-            </span>
+            {locale === 'en' ? (
+              <>
+                {dict.hero.title.part1}
+                <br />
+                <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                  {dict.hero.title.part2}
+                </span>
+              </>
+            ) : (
+              <>
+                <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                  {dict.hero.title.part1}
+                </span>
+                <br />
+                {dict.hero.title.part2}
+              </>
+            )}
           </h1>
         </div>
 
@@ -49,7 +75,7 @@ export default function HeroSection() {
             }`}
             duration={30}
           >
-            Herewegoal helps lean teams align fast with example-driven specs powered by GenAI.
+            {dict.hero.subtitle}
           </TypingAnimation>
         </div>
 
@@ -63,7 +89,7 @@ export default function HeroSection() {
                   : 'bg-black text-white hover:bg-gray-800'
               }`}
             >
-              Join Waiting List
+              {dict.hero.cta}
               <ArrowRight className="ml-2 size-5 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
             </Button>
           </Link>

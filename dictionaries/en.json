@@ -1,0 +1,64 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close"
+  },
+  "navigation": {
+    "home": "Home",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "waitingList": "Join Waiting List"
+  },
+  "navbar": {
+    "discord": "Discord"
+  },
+  "hero": {
+    "title": {
+      "part1": "Your team doesn’t need more productivity hacks.",
+      "part2": "just clear specs"
+    },
+    "subtitle": "With Herewegoal, transform your ideas into crystal-clear, ready-to-execute plans—all on your own..",
+    "cta": "Join Waiting List",
+    "learnMore": "Learn More"
+  },
+  "problem": {
+    "title": "The Problem",
+    "subtitle": "The real problem isn't development speed — it's team alignment.",
+    "quote": "Prompt engineering is dead. The future is spec engineering.",
+    "quoteAuthor": "— Sean Grove, OpenAI",
+    "problems": [
+      "Vague ideas → vague specs → vague products",
+      "Too much time spent on back-and-forth communication about requirements, leaving little time for actual development",
+      "AI tools help you write code, but no one helps you clarify what to write"
+    ],
+    "solution": "Say goodbye to endless back-and-forth communication between PMs, engineers, and QA. With Herewegoal, you can independently transform ideas into clear, executable plans."
+  },
+  "solution": {
+    "title": "The Solution",
+    "subtitle": "From idea to spec — in structured steps.",
+    "solutions": [
+      "Starts from a prompt — describe your feature idea in natural language",
+      "Generates working examples — see your feature in action before writing code",
+      "Creates testable specs — clear acceptance criteria that prevent scope creep",
+      "Enables fast iteration — refine your specs with AI-powered suggestions"
+    ],
+    "conclusion": ""
+  },
+  "waitingList": {
+    "title": "Join Our Waiting List",
+    "subtitle": "Be the first to experience AI-powered specification clarity",
+    "emailPlaceholder": "Enter your email address",
+    "submit": "Join Waiting List",
+    "success": "Thank you! You've been added to our waiting list.",
+    "error": "Something went wrong. Please try again."
+  },
+  "footer": {
+    "copyright": "© 2024 Herewegoal. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}

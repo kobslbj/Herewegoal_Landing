@@ -3,8 +3,21 @@
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import ParticlesWrapper from '@/components/particles-wrapper';
+import type { Locale } from '@/lib/i18n';
 
-export default function SolutionSection() {
+type Props = {
+  locale: Locale;
+  dict: {
+    solution: {
+      title: string;
+      subtitle: string;
+      solutions: string[];
+      conclusion: string;
+    };
+  };
+};
+
+export default function SolutionSection({ dict }: Props) {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -16,12 +29,6 @@ export default function SolutionSection() {
 
   const isDark = resolvedTheme === 'dark';
 
-  const solutions = [
-    'Starts from a prompt — describe your feature idea in natural language',
-    'GenAI suggests Given / When / Then — AI generates structured scenarios',
-    'Team clarifies edge cases — collaborate to refine scenarios',
-    'Turn into testable specs, synced to GitHub — implementation-ready specs'
-  ];
 
   return (
     <section 
@@ -35,7 +42,7 @@ export default function SolutionSection() {
         <div className="flex flex-col items-start justify-start space-y-6 sm:space-y-8 md:space-y-10">
           <div className="w-full max-w-5xl">
             <h2 className="text-2xl font-bold leading-tight tracking-tight sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
-              The Solution
+              {dict.solution.title}
             </h2>
           </div>
 
@@ -43,12 +50,12 @@ export default function SolutionSection() {
             <p className={`text-base tracking-normal sm:text-lg md:text-xl leading-relaxed ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              From Idea to Testable Spec — with Examples, not Meetings.
+              {dict.solution.subtitle}
             </p>
           </div>
 
           <div className="space-y-3 sm:space-y-4 w-full max-w-4xl">
-            {solutions.map((solution, index) => (
+            {dict.solution.solutions.map((solution: string, index: number) => (
               <div key={index} className="flex items-start gap-3 sm:gap-4">
                 <div className={`flex-shrink-0 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full mt-2 sm:mt-3 ${
                   isDark ? 'bg-gray-400' : 'bg-gray-500'
@@ -66,7 +73,7 @@ export default function SolutionSection() {
             <p className={`text-base sm:text-lg font-medium leading-relaxed ${
               isDark ? 'text-white' : 'text-black'
             }`}>
-              Herewegoal is your AI-native workspace for example-driven alignment.
+              {dict.solution.conclusion}
             </p>
           </div>
         </div>
