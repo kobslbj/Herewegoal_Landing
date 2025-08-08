@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: 'Herewegoal — Build clarity before code',
     description:
       'Use GenAI to turn vague product ideas into testable specs. For dev teams that care about getting it right, not just done.',
-    images: ['https://herewegoal.com/twitter-image.png'],
+    images: ['https://herewegoal.com/twitter-image-new.png'],
   },
   metadataBase: new URL('https://herewegoal.com'),
   alternates: {
