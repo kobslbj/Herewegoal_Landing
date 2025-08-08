@@ -69,13 +69,15 @@ export default function SolutionSection({ dict }: Props) {
             ))}
           </div>
 
-          <div className="w-full max-w-4xl">
-            <p className={`text-base sm:text-lg font-medium leading-relaxed ${
-              isDark ? 'text-white' : 'text-black'
-            }`}>
-              {dict.solution.conclusion}
-            </p>
-          </div>
+          {Boolean(dict.solution.conclusion && dict.solution.conclusion.trim()) && (
+            <div className="w-full max-w-4xl">
+              <p className={`text-base sm:text-lg font-medium leading-relaxed ${
+                isDark ? 'text-white' : 'text-black'
+              }`}>
+                {dict.solution.conclusion}
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </section>

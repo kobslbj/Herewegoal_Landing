@@ -18,8 +18,8 @@
   },
   "hero": {
     "title": {
-      "part1": "Your team doesn’t need more productivity hacks.",
-      "part2": "just clear specs"
+      "part1": "Ideas are cheap. with AI, execution is also cheap.",
+      "part2": "Now, smart validation is the key."
     },
     "subtitle": "With Herewegoal, transform your ideas into crystal-clear, ready-to-execute plans—all on your own..",
     "cta": "Join Waiting List",
@@ -39,14 +39,14 @@
   },
   "solution": {
     "title": "The Solution",
-    "subtitle": "From idea to spec — in structured steps.",
+    "subtitle": "From idea to validated spec — with AI-assisted steps.",
     "solutions": [
-      "Starts from a prompt — describe your feature idea in natural language",
-      "Generates working examples — see your feature in action before writing code",
-      "Creates testable specs — clear acceptance criteria that prevent scope creep",
-      "Enables fast iteration — refine your specs with AI-powered suggestions"
+      "Start with a prompt — describe your feature in natural language",
+      "Auto‑generate examples — preview behavior before coding",
+      "Validate assumptions — fast checks with users, metrics, and AI",
+      "Create testable specs — clear acceptance criteria that prevent scope creep"
     ],
-    "conclusion": ""
+    "conclusion": "In a world where ideas and execution are cheap, smart validation is the key."
   },
   "waitingList": {
     "title": "Join Our Waiting List",
@@ -62,3 +62,5 @@
     "terms": "Terms of Service"
   }
 }
+
+
