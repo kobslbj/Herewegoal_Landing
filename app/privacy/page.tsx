@@ -1,11 +1,5 @@
-import PrivacyContent from '../../markdown/Privacy.mdx';
-import styles from './styles.module.css';
+import { redirect } from 'next/navigation';
+
 export default function PrivacyPage() {
-  return (
-    <div className={styles.container}>
-      <div className={styles.content}>
-        <PrivacyContent />
-      </div>
-    </div>
-  );
+  redirect('/en/privacy');
 }
