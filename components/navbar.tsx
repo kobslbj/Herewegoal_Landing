@@ -40,18 +40,12 @@ export function Navbar({ locale }: Props) {
             </span>
           </Link>
           <nav className="flex items-center gap-8">
-            {/* <Link
-              href="/pricing"
+            <Link
+              href={`/${locale}/pricing`}
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-1 py-2"
             >
               Pricing
             </Link>
-            <Link
-              href="/blog"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-1 py-2"
-            >
-              Blog
-            </Link> */}
             <Link
               href="https://discord.gg/QncZjDFKYg"
               target="_blank"
@@ -89,30 +83,12 @@ export function Navbar({ locale }: Props) {
                     <div className="mb-4">
                       <LanguageSwitcher currentLocale={locale} />
                     </div>
-                    {/* <Link
-                      href="/#features"
-                      className="text-base text-muted-foreground hover:text-foreground transition-colors py-1"
-                    >
-                      Features
-                    </Link>
                     <Link
-                      href="/pricing"
+                      href={`/${locale}/pricing`}
                       className="text-base text-muted-foreground hover:text-foreground transition-colors py-1"
                     >
                       Pricing
                     </Link>
-                    <Link
-                      href="/blog"
-                      className="text-base text-muted-foreground hover:text-foreground transition-colors py-1"
-                    >
-                      Blog
-                    </Link>
-                    <Link
-                      href="/#faq"
-                      className="text-base text-muted-foreground hover:text-foreground transition-colors py-1"
-                    >
-                      FAQ
-                    </Link> */}
                     <Link
                       href="https://discord.gg/QncZjDFKYg"
                       target="_blank"

@@ -80,7 +80,7 @@ export default function HeroSection({ locale, dict }: Props) {
         </div>
 
         <div className="flex flex-col gap-4 items-center sm:flex-row sm:gap-6 mt-2">
-          <Link href="#waiting-list">
+          <Link href="https://app.herewegoal.com" target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
               className={`rounded-xl px-10 py-5 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-lg ${

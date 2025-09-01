@@ -1,91 +1,90 @@
 'use client';
 
-import { ShineBorder } from '@/components/magicui/shine-border';
-import { Check, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
-export default function PricingSection() {
-  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+type Props = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  dict: any;
+};
 
-  const plans = [
-    {
-      name: 'Herewegoal Basic',
-      price: 'Free',
-      features: [
-        'Manage up to 3 active projects simultaneously',
-        'Create up to 3 project folders',
-        'Task views: Day / Week',
-      ],
-      buttonText: 'Get Started',
-      buttonVariant: 'outline' as const,
-      colors: ['#4F46E5', '#06B6D4', '#10B981'], // 藍紫色系
-    },
-    {
-      name: 'Herewegoal Pro',
-      price: '$5',
-      period: '/month',
-      features: ['Unlimited active projects', 'Unlimited project folders', 'Task views: Day / Week / Month'],
-      buttonText: 'Upgrade to Pro',
-      buttonVariant: 'default' as const,
-      popular: true,
-      colors: ['#A07CFE', '#FE8FB5', '#FFBE7B'], // 漸變色系
-    },
-  ];
-
-  if (!mounted) return null;
+export default function PricingSection({ dict }: Props) {
+  const t = dict?.pricing;
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8" id="pricing">
+    <section className="py-20 px-4 sm:px-6 lg:px-8" id="pricing">
       <div className="max-w-screen-xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
-            Simple{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-teal-500 to-emerald-500">
-              Pricing
-            </span>{' '}
-            for Everyone
-          </h2>
-          <p className="text-muted-foreground text-lg">Choose the perfect plan for your needs</p>
+        <div className="text-center mb-12">
+          <h1 className="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground/90 to-foreground/80">
+            {t?.headline}
+          </h1>
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">{t?.subheadline}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {plans.map((plan, index) => (
-            <div key={index} className="size-full">
-              <ShineBorder className="relative size-full rounded-xl" color={plan.colors}>
-                <div className="size-full p-8 bg-background/95">
-                  {plan.popular && (
-                    <div className="mb-4 flex items-center gap-2 text-sm font-medium text-blue-600 dark:text-blue-500">
-                      <Star className="h-4 w-4 fill-current" />
-                      Most Popular
-                    </div>
-                  )}
-                  <h3 className="text-2xl font-bold">{plan.name}</h3>
-                  <div className="mt-2 flex items-baseline">
-                    <span className="text-4xl font-bold">{plan.price}</span>
-                    {plan.period && <span className="text-muted-foreground ml-1">{plan.period}</span>}
-                  </div>
-                  <ul className="mt-8 space-y-4 flex-1">
-                    {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center gap-3">
-                        <Check className="h-5 w-5 flex-shrink-0 text-green-500" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+        <div className="overflow-x-auto">
+          <table className="w-full max-w-5xl mx-auto border-collapse rounded-xl overflow-hidden">
+            <thead>
+              <tr className="bg-muted/40">
+                <th className="w-1/3 text-left p-4 text-sm font-medium text-muted-foreground">{''}</th>
+                <th className="w-1/3 p-4 text-center text-base font-semibold">{t?.table?.headers?.trial}</th>
+                <th className="w-1/3 p-4 text-center text-base font-semibold">{t?.table?.headers?.pro}</th>
+              </tr>
+            </thead>
+            <tbody className="[&_tr:not(:last-child)]:border-b">
+              <tr>
+                <td className="p-4 text-sm font-medium text-muted-foreground">{t?.table?.rows?.price}</td>
+                <td className="p-4 text-center">
+                  <span className="text-2xl font-bold">{t?.table?.trial?.price}</span>
+                </td>
+                <td className="p-4 text-center">
+                  <span className="text-2xl font-bold">{t?.table?.pro?.price}</span>
+                </td>
+              </tr>
+              <tr>
+                <td className="p-4 text-sm font-medium text-muted-foreground">{t?.table?.rows?.aiCredits}</td>
+                <td className="p-4 text-center">{t?.table?.trial?.aiCredits}</td>
+                <td className="p-4 text-center">{t?.table?.pro?.aiCredits}</td>
+              </tr>
+              <tr>
+                <td className="p-4 text-sm font-medium text-muted-foreground">{t?.table?.rows?.includedAIFeatures}</td>
+                <td className="p-4 text-center">{t?.table?.trial?.includedAIFeatures}</td>
+                <td className="p-4 text-center">{t?.table?.pro?.includedAIFeatures}</td>
+              </tr>
+              <tr>
+                <td className="p-4 text-sm font-medium text-muted-foreground">{t?.table?.rows?.taskNameSuggestions}</td>
+                <td className="p-4 text-center">{t?.table?.trial?.taskNameSuggestions}</td>
+                <td className="p-4 text-center">{t?.table?.pro?.taskNameSuggestions}</td>
+              </tr>
+              <tr>
+                <td className="p-4 text-sm font-medium text-muted-foreground">{t?.table?.rows?.githubIntegration}</td>
+                <td className="p-4 text-center">{t?.table?.trial?.githubIntegration}</td>
+                <td className="p-4 text-center">{t?.table?.pro?.githubIntegration}</td>
+              </tr>
+              <tr>
+                <td className="p-4 text-sm font-medium text-muted-foreground">{t?.table?.rows?.workspaceMembers}</td>
+                <td className="p-4 text-center">{t?.table?.trial?.workspaceMembers}</td>
+                <td className="p-4 text-center">{t?.table?.pro?.workspaceMembers}</td>
+              </tr>
+              <tr>
+                <td className="p-4 text-sm font-medium text-muted-foreground">{t?.table?.rows?.afterTrialEnds}</td>
+                <td className="p-4 text-center">{t?.table?.trial?.afterTrialEnds}</td>
+                <td className="p-4 text-center">{t?.table?.pro?.afterTrialEnds}</td>
+              </tr>
+              <tr>
+                <td className="p-4" />
+                <td className="p-4 text-center">
                   <Link href="https://app.herewegoal.com">
-                    <Button className="mt-8 w-full cursor-pointer" variant={plan.buttonVariant} size="lg">
-                      {plan.buttonText}
-                    </Button>
+                    <Button variant="outline" size="lg">{t?.cta?.trial}</Button>
                   </Link>
-                </div>
-              </ShineBorder>
-            </div>
-          ))}
+                </td>
+                <td className="p-4 text-center">
+                  <Link href="https://app.herewegoal.com/#/billing">
+                    <Button size="lg">{t?.cta?.pro}</Button>
+                  </Link>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>

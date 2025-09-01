@@ -11,18 +11,18 @@
     "home": "Home",
     "pricing": "Pricing",
     "blog": "Blog",
-    "waitingList": "Join Waiting List"
+    "trial": "Start Trial"
   },
   "navbar": {
     "discord": "Discord"
   },
   "hero": {
     "title": {
-      "part1": "Ideas are cheap. with AI, execution is also cheap.",
-      "part2": "Now, smart validation is the key."
+      "part1": "Turn Ideas into",
+      "part2": "Validated Product Specs"
     },
-    "subtitle": "With Herewegoal, transform your ideas into crystal-clear, ready-to-execute plans—all on your own..",
-    "cta": "Join Waiting List",
+    "subtitle": "Built for small teams and solo founders. Transform vague ideas into crystal-clear, executable product specifications with AI-powered validation.",
+    "cta": "Start your 7-day trial",
     "learnMore": "Learn More"
   },
   "problem": {
@@ -48,18 +48,61 @@
     ],
     "conclusion": "In a world where ideas and execution are cheap, smart validation is the key."
   },
-  "waitingList": {
-    "title": "Join Our Waiting List",
-    "subtitle": "Be the first to experience AI-powered specification clarity",
-    "emailPlaceholder": "Enter your email address",
-    "submit": "Join Waiting List",
-    "success": "Thank you! You've been added to our waiting list.",
-    "error": "Something went wrong. Please try again."
+  "trial": {
+    "title": "Ready to get started?",
+    "subtitle": "Start your 7-day free trial and experience AI-powered specification engineering.",
+    "primaryCta": "Start Free Trial",
+    "primaryCtaSubtext": "7 days, no credit card required",
+    "secondaryCta": "Upgrade to Pro for $19/month",
+    "trustTitle": "Trusted by small teams and solo founders building the next big thing 🚀",
+    "trustSubtitle": "We help startups under 10 people move faster and stay aligned."
   },
   "footer": {
     "copyright": "© 2024 Herewegoal. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
+  },
+  "pricing": {
+    "title": "Pricing",
+    "headline": "Build better products, faster.",
+    "subheadline": "Turn natural language into executable product specs and manage your entire project workflow seamlessly.",
+    "table": {
+      "headers": {
+        "trial": "Trial",
+        "pro": "Pro Workspace"
+      },
+      "rows": {
+        "price": "Price",
+        "aiCredits": "AI Credits",
+        "includedAIFeatures": "Included AI Features",
+        "taskNameSuggestions": "Task Name Suggestions",
+        "githubIntegration": "GitHub Integration",
+        "workspaceMembers": "Workspace Members",
+        "afterTrialEnds": "After Trial Ends"
+      },
+      "trial": {
+        "price": "Free (7 days)",
+        "aiCredits": "50 credits total",
+        "includedAIFeatures": "Repo Summary, Spec Generation, Spec Editing",
+        "taskNameSuggestions": "Unlimited & free",
+        "githubIntegration": "Limited repo binding",
+        "workspaceMembers": "Invite team members",
+        "afterTrialEnds": "Workspace becomes read-only"
+      },
+      "pro": {
+        "price": "$19 / month / workspace",
+        "aiCredits": "500 credits / month",
+        "includedAIFeatures": "Repo Summary, Spec Generation, Spec Editing",
+        "taskNameSuggestions": "Unlimited & free",
+        "githubIntegration": "Unlimited repo binding",
+        "workspaceMembers": "Invite team members",
+        "afterTrialEnds": "Full access"
+      }
+    },
+    "cta": {
+      "trial": "Start Free Trial",
+      "pro": "Get Pro"
+    }
   }
 }
 

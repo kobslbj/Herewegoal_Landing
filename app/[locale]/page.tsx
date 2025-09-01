@@ -1,7 +1,7 @@
 import HeroSection from '@/components/heroSection/page';
 import ProblemSection from '@/components/problemSection/page';
 import SolutionSection from '@/components/solutionSection/page';
-import WaitingListSection from '@/components/waitingListSection/page';
+import TrialSection from '@/components/trialSection/page';
 import type { Locale } from '@/lib/i18n';
 import { getDictionary } from '@/lib/dictionaries';
 
@@ -25,7 +25,7 @@ export default async function Home({ params }: Props) {
       <HeroSection locale={locale} dict={dict} />
       <ProblemSection locale={locale} dict={dict} />
       <SolutionSection locale={locale} dict={dict} />
-      <WaitingListSection locale={locale} dict={dict} />
+      <TrialSection locale={locale} dict={dict} />
     </div>
   );
 }
