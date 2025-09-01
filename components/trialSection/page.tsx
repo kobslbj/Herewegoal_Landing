@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import ParticlesWrapper from '@/components/particles-wrapper';
-import type { Locale } from '@/lib/i18n';
 
 type Props = {
   dict: {
