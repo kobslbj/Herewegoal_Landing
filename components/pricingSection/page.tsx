@@ -2,8 +2,10 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import type { Locale } from '@/lib/i18n';
 
 type Props = {
+  locale: Locale;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   dict: any;
 };
