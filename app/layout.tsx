@@ -22,14 +22,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://herewegoal.com',
+    url: 'https://www.herewegoal.com',
     siteName: 'Herewegoal',
     title: 'Herewegoal — AI-first workspace from idea to spec',
     description:
       'Herewegoal helps product and engineering teams clarify feature specs before any code is written. Prevent misalignment. Start with shared understanding.',
     images: [
       {
-        url: 'https://herewegoal.com/og-image.png',
+        url: 'https://www.herewegoal.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Herewegoal — AI-first workspace from idea to spec',
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     title: 'Herewegoal — Build clarity before code',
     description:
       'Use GenAI to turn vague product ideas into testable specs. For dev teams that care about getting it right, not just done.',
-    images: ['https://herewegoal.com/twitter-image-new.png'],
+    images: ['https://www.herewegoal.com/twitter-image-new.png'],
   },
-  metadataBase: new URL('https://herewegoal.com'),
+  metadataBase: new URL('https://www.herewegoal.com'),
   alternates: {
     canonical: '/',
   },
